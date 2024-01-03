@@ -1,0 +1,136 @@
+header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+.logo {
+    width: 75px;
+}
+.iconrecherche{
+    width: 20px;
+    height: 20px;
+
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+nav a {
+    text-decoration: none;
+    color: rgb(109, 109, 121);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.0em;
+    font-weight: 500;
+    transition: 0.7 ease;
+    
+}
+
+.navigation a:hover{
+    color: red;
+    transform: scale(1.1);
+}
+main{
+    background: linear-gradient(60deg red blue yellow);
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    display: flex;
+    justify-content: center;
+      
+}
+
+fieldset{
+    display:flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 60%;
+    margin-left: 10%;
+    margin: 100px;
+    border-radius: 5%;
+}
+fieldset h2{
+    font-size: 2em;
+    font-weight: 800;
+
+}
+fieldset p{
+    font-size: 1.3em;
+}
+.name{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.name input{
+    width: 200px;
+}
+.name textarea{
+    width: 50%;
+}
+
+.days div{
+    display: inline;
+    margin: 10px;
+}
+.days input{
+    margin: 10px;
+}
+form button{
+    width: 100px;
+    height: 35px;
+    border-radius: 10%;
+    color: beige;
+    background-color: rgb(10, 7, 4);
+    margin: 20px;
+}
+footer{
+    display: grid;
+    background-color: rgba(236, 126, 62, 0.945);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 260px 30px;
+    width: 95%;
+    height: 300px;
+    margin-top: 50px;
+    padding: 30px;
+    padding-bottom: 0px;
+    color: white;
+    font-family: sans-serif;
+
+
+}
+.footer1 button , .footer1 a{
+    border: none;
+    text-decoration: none;
+    font-weight: 700;
+}
+footer h4{
+    font-size: 1.3em;
+}
+.footer2 li a , .footer4 a{
+    color: white;
+    text-decoration: none;
+}
+.footer3 a{
+    color: white;
+    text-decoration: none;
+    font-weight: 700;}
+
+
+
+.droitreserve{
+    grid-column: 1/5;
+    text-align: center;
+    align-self: center;
+}
+
+

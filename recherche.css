@@ -1,0 +1,24 @@
+        body {
+            background-color: rgb(32, 32, 32) ;
+            display: flex;
+            width: 90% ;
+            height: 90vh;
+        }
+        input{
+            width: 400px;
+            height: 55px;
+            border-radius: 10px;
+            margin: 50px 100px 100px 500px;
+        }
+        a{
+            text-align: left;
+            text-decoration: none;
+            color: white;
+            font-size: xx-large;
+            font-weight: bold;
+            margin-left: 50px;
+        }
+        div a {
+            animation: ;
+        }
+
