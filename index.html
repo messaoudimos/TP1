@@ -4,32 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>accueil parlons nos langues</title>
+    <script src="https://kit.fontawesome.com/bf806af1d9.js" crossorigin="anonymous"></script>
+    <title> accueil parlons nos langues</title>
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
 </head>
 <body>
     <header >
-        <div>
-            <a href="index.html" >
-            <img class="logo" src="images/Logo-Parlons-nos-langues-vectorisé.png" alt="logo" >
-            </a>
+        <div class="hd">
+            <div>
+                <a href="index.html" >
+                    <img class="logo" src="images/Logo-Parlons-nos-langues-vectorisé.png" alt="logo" >
+                </a>
+            
+            </div>
+            <div class="navigation">
+                <a href="index.html"> L'ACCUEIL</a>
+                <a href="l'association.html">L'ASSOCIATION</a>
+                <a href="actions.html">ACTIONS</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+        
+
+            <div  class="research">
+                <a href="recherche.html" target="_blank">
+                <img class="searchicon" src="images/iconrecherche.png" alt="iconrrecherche" >
+                </a>
+            </div>
         </div>
-        <nav class="navigation">
-        <a href="index.html"> L'ACCUEIL</a>
-        <a href="l'association.html">L'ASSOCIATION</a>
-        <a href="actions.html">ACTIONS</a>
-        <a href="ressources.html">RESSOURCES</a>
-        <a href="actualités.html">ACTUALITÉ</a>
-        <a href="contact.html">CONTACT</a>
-        </nav>
-        <div  class="research">
-            <a href="recherche.html" target="_blank">
-            <img class="searchicon" src="images/iconrecherche.png" alt="iconrrecherche" >
-            </a>
-        </div>
+       
+            <div class="menu">
+                <!-- Utilisation d'une checkbox -->
+                 <input type="checkbox" id="hamburger">
+                <!-- Label de la checkbox -->
+                <label id="hamburger-logo" for="hamburger">☰</label>
+                 <!-- Le reste du menu -->
+                <nav class="burg">
+                    <a class="a" href="index.html">Page d'accueil</a>
+                    <a class="a" href="l'association.html">L'ASSOCIATION</a>
+                    <a class="a" href="actions.html">ACTIONS</a>
+                    <a class="a" href="contact.html">CONTACT</a>
+                </nav>
+            </div>
+            
+      <!-- Contenu -->
+        
     </header>
     <main >
         <section class="scroll" id="ancre" >
-            <div id="caroussel1">
+            <div class="caroussel1">
                 <div class="images">
                         <img src="images/01-Boite-a-histoires.jpg" alt="images/01-Boite-a-histoires">
                         <img src="images/02-Expo-mediatheque-de-Lormont.jpg" alt="Expo-mediatheque-de-Lormont">
@@ -51,8 +73,11 @@
                     Le plurilinguisme est une richesse : partageons-la !
                 </h2>
             </div>
-            <div class="smallscroll">
+            </section>
+        <section class="section3">
+                <div class="image-ag">
                         <img src="images/05-Lassociation-Parlons-nos-Langues-.webp" alt="">
+                </div>
                 <div class="scroll2">
                     <div class="caroussel2" >
                         <div class="images2">
@@ -63,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+        </section class="section4">
             <div class="knowmore">
                 <div class="what">
                     <h3>Parlons nos langues ! Qu'est-ce que c'est ?</h3>
@@ -97,7 +122,8 @@
                 </div>
             </div>
         </section>
-        <section >
+        <section class="partners">
+                <div class="separator" id="partn"></div>
                 <h2> Nos partenaires</h2>
                 <div class="partenaires">
                 <div><img src="logos-partenaire/bois_fleuri_Lormont.webp" alt="bois_fleuri_Lormont"></div>
@@ -115,10 +141,20 @@
                 <div><img src="logos-partenaire/auberny_75196_07e.webp" alt=""></div>
                 <div><img src="logos-partenaire/logo-Agence-quand-les-livres-relient-conflicted.webp" alt=""></div>
             </div>
-                
-
-
         </section>
+        
+        <section class="contact-us">
+                <div>
+                    <h2>Envie d’en savoir plus sur notre association ?</h2>
+                    <h4>Rejoignez-nous !</h4>
+                </div>
+                
+                <div class="button">
+                    <a href="contact.html" > <i class="fa-solid fa-envelope"></i>Contactez-nous</a>
+                </div>
+        </section> 
+
+    
     </main>
     <footer>
     
@@ -129,17 +165,14 @@
                 Le plurilinguisme est une richesse :
                 partageons-la !  
             </p>
-            <button><a href="#ancre">BACK TO TOP</a></button>
         </div>
         <div class="footer2">
             <h4>Notre site Internet</h4>
 
             <ul>
                 <li><a href="l'association.html">L'association</a></li>
-                <li><a href="actions.html">Nos avctions</a></li>
-                <li><a href="actualités.html">Actualités</a></li>
-                <li><a href="ressources.html">Ressources</a></li>
-                <li><a href="#partenaires">Partenaires</a></li>
+                <li><a href="actions.html">Nos actions</a></li>
+                <li><a href="#partn" >Partenaires</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
@@ -158,6 +191,7 @@
                 <li><a href="https://www.facebook.com/ParlonsNosLangues33/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0" target="_blank">Facebook</a></li>
                 <li><a href="https://www.youtube.com/@ParlonsNosLangues" target="_blank" >Youtube</a></li>
             </ul>
+            <button><a href="#ancre">BACK TO TOP</a></button>
         </div>
         <div class="droitreserve">
             <p>2023 • Site propulsé par Up&Co• Contenu libre d’utilisation</p>

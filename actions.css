@@ -1,29 +1,34 @@
-header{
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.hd{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: white;
     width: 100%;
-    position: relative;
-    z-index: 999;
+    background-color: white;
+    z-index: 1;
+    margin-top: 0px;
+    position: fixed;
 }
 .logo {
     width: 75px;
 }
-.iconrecherche{
+.searchicon{
     width: 20px;
     height: 20px;
 
 }
-nav {
+.navigation {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 30%;
 }
-nav a {
+.navigation a {
     text-decoration: none;
     color: rgb(109, 109, 121);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.0em;
     font-weight: 500;
     transition: 0.7 ease;
@@ -34,25 +39,115 @@ nav a {
     color: red;
     transform: scale(1.1);
 }
+
+
+
+.menu {
+    /* Pour que le menu reste en place quand on scroll */
+    position: fixed;
+    /* Pour que le menu ne soit pas sur le texte et que ce dernier puisse être sélectionné */
+    width: 0px;
+    display: none;
+    z-index: 2;
+  }
+
+  #hamburger {
+    /* Pour que la checkbox ne s'affiche pas */
+    display: none;
+  }
+  
+  #hamburger-logo {
+    /* Pour que le curseur soit un pointeur */
+    cursor: pointer;
+    background: black;
+    width: 200px;
+    display: block;
+    color: white;
+    /* Pour que le menu hamburger s'affiche toujours */
+    text-align: right;
+    /* Pour que le menu hamburger soit "rangé" par défaut */
+    transform: translateX(-90%);
+    padding: 10px;
+  
+  }
+  
+  .burg{
+    display: flex;
+        flex-direction: column;
+        background: black;
+        overflow: hidden;
+        width: 200px;
+        color: white;
+        /* Pour que les liens soient "rangés" par défaut */
+        transform: translateX(-210px);
+      }
+      
+  
+  #hamburger-logo,nav {
+    /* Pour qu'il y ait une animation */
+    transition: 0.7s;
+  }
+  
+  /* Lorsque #hamburger est coché, le #hamburger-logo et le nav qui sont dans le même parent changent de propriété */
+  #hamburger:checked ~ #hamburger-logo,
+  #hamburger:checked ~ nav {
+    /* Changement de la position pour afficher les menus */
+    transform: translate(-8px);
+  }
+  .menu nav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  .menu nav a :hover{
+    background-color: blueviolet;
+  }
+
+.action{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -10px;
+    
+}
+.action h1{
+    display: flex;
+    font-size: 3em;
+    font-weight: 800;
+    width: auto;
+    text-align: center;
+    margin-top: 60px;
+}
+.action p{
+    display: flex;
+    font-size: 1.2em;
+    width: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 footer{
     display: grid;
     background-color: rgba(236, 126, 62, 0.945);
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 260px 30px;
-    width: 95%;
+    align-self: center;
     height: 300px;
     margin-top: 50px;
     padding: 30px;
     padding-bottom: 0px;
     color: white;
-    font-family: sans-serif;
 
 }
-.footer1 button , .footer1 a{
+.footer4 button , .footer4 button a{
+    background-color:  rgba(236, 126, 62, 0.945);
+    font-size: 16px;
     border: none;
+    margin-bottom: 10px;
     text-decoration: none;
     font-weight: 700;
+    color: white;
 }
+
 footer h4{
     font-size: 1.3em;
 }
@@ -73,3 +168,32 @@ footer h4{
     align-self: center;
 }
 
+@media screen and (max-width: 800px ){
+    .navigation{
+        display: none;
+    }
+    .menu {
+        display : block;
+    }
+    
+    .logo {
+        width: 55px;
+    }
+    .searchicon{
+        width: 15px;
+        height: 15px;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;    
+        height: fit-content;
+        align-items: center;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        }
+    .action h1{
+        font-size: 2em;
+    }
+    
+    }

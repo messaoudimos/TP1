@@ -1,30 +1,34 @@
-header{
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.hd{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: white;
     width: 100%;
-    position: fixed;
+    background-color: white;
     z-index: 1;
-    top: 0;
+    margin-top: 0px;
+    position: fixed;
 }
 .logo {
     width: 75px;
 }
-.iconrecherche{
+.searchicon{
     width: 20px;
     height: 20px;
 
 }
-nav {
+.navigation {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 30%;
 }
-nav a {
+.navigation a {
     text-decoration: none;
     color: rgb(109, 109, 121);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.0em;
     font-weight: 500;
     transition: 0.7 ease;
@@ -35,13 +39,76 @@ nav a {
     color: red;
     transform: scale(1.1);
 }
-main{
-    background: linear-gradient(60deg red blue yellow);
-}
+
+
+
+.menu {
+    /* Pour que le menu reste en place quand on scroll */
+    position: fixed;
+    /* Pour que le menu ne soit pas sur le texte et que ce dernier puisse être sélectionné */
+    width: 0px;
+    display: none;
+    z-index: 2;
+  }
+
+  #hamburger {
+    /* Pour que la checkbox ne s'affiche pas */
+    display: none;
+  }
+  
+  #hamburger-logo {
+    /* Pour que le curseur soit un pointeur */
+    cursor: pointer;
+    background: black;
+    width: 200px;
+    display: block;
+    color: white;
+    /* Pour que le menu hamburger s'affiche toujours */
+    text-align: right;
+    /* Pour que le menu hamburger soit "rangé" par défaut */
+    transform: translateX(-90%);
+    padding: 10px;
+  
+  }
+  
+  .burg{
+    display: flex;
+        flex-direction: column;
+        background: black;
+        overflow: hidden;
+        width: 200px;
+        color: white;
+        /* Pour que les liens soient "rangés" par défaut */
+        transform: translateX(-210px);
+      }
+      
+  
+  #hamburger-logo,nav {
+    /* Pour qu'il y ait une animation */
+    transition: 0.7s;
+  }
+  
+  /* Lorsque #hamburger est coché, le #hamburger-logo et le nav qui sont dans le même parent changent de propriété */
+  #hamburger:checked ~ #hamburger-logo,
+  #hamburger:checked ~ nav {
+    /* Changement de la position pour afficher les menus */
+    transform: translate(-8px);
+  }
+  .menu nav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  .menu nav a :hover{
+    background-color: blueviolet;
+  }
+
+
 form{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -10px;
 }
 .title{
     display: flex;
@@ -53,9 +120,9 @@ fieldset{
     display:flex;
     flex-direction: column;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    width: 60%;
-    margin-left: 10%;
-    margin: 100px;
+    width: 80%;
+    margin: 50px;
+    margin-top: 100px;
     border-radius: 5%;
 }
 fieldset h2{
@@ -93,12 +160,17 @@ form button{
     background-color: rgb(10, 7, 4);
     margin: 20px;
 }
+.maps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 footer{
     display: grid;
     background-color: rgba(236, 126, 62, 0.945);
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 260px 30px;
-    width: 95%;
     height: 300px;
     margin-top: 50px;
     padding: 30px;
@@ -108,11 +180,16 @@ footer{
 
 
 }
-.footer1 button , .footer1 a{
+.footer4 button , .footer4 button a{
+    background-color:  rgba(236, 126, 62, 0.945);
+    font-size: 16px;
     border: none;
+    margin-bottom: 10px;
     text-decoration: none;
     font-weight: 700;
+    color: white;
 }
+
 footer h4{
     font-size: 1.3em;
 }
@@ -132,5 +209,39 @@ footer h4{
     text-align: center;
     align-self: center;
 }
+@media screen and (max-width: 800px ){
+    .navigation{
+        display: none;
+    }
+    .menu {
+        display : block;
+    }
+    
+    .logo {
+        width: 55px;
+    }
+    .searchicon{
+        width: 15px;
+        height: 15px;
+    }
+
+    fieldset h2{
+        font-size: 1.5em;
+        font-weight: 600;
+    
+    }
+    fieldset p{
+        font-size: 1.0em;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;    
+        height: fit-content;
+        align-items: center;
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        }
+    }
 
 

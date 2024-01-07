@@ -2,14 +2,20 @@
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-header{
+main{
+    margin-top: -10px;
+}
+
+
+.hd{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: white;
     width: 100%;
+    background-color: white;
     position: fixed;
     z-index: 1;
+    padding-top: 0px;
 }
 .logo {
     width: 75px;
@@ -19,12 +25,12 @@ header{
     height: 20px;
 
 }
-nav {
+.navigation {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 30%;
 }
-nav a {
+.navigation a {
     text-decoration: none;
     color: rgb(109, 109, 121);
     font-size: 1.0em;
@@ -38,6 +44,70 @@ nav a {
     transform: scale(1.1);
 }
 
+
+
+.menu {
+    /* Pour que le menu reste en place quand on scroll */
+    position: fixed;
+    /* Pour que le menu ne soit pas sur le texte et que ce dernier puisse être sélectionné */
+    width: 0px;
+    display: none;
+    z-index: 2;
+  }
+
+  #hamburger {
+    /* Pour que la checkbox ne s'affiche pas */
+    display: none;
+  }
+  
+  #hamburger-logo {
+    /* Pour que le curseur soit un pointeur */
+    cursor: pointer;
+    background: black;
+    width: 200px;
+    display: block;
+    color: white;
+    /* Pour que le menu hamburger s'affiche toujours */
+    text-align: right;
+    /* Pour que le menu hamburger soit "rangé" par défaut */
+    transform: translateX(-90%);
+    padding: 10px;
+  
+  }
+  
+  .burg{
+    display: flex;
+        flex-direction: column;
+        background: black;
+        overflow: hidden;
+        width: 200px;
+        color: white;
+        /* Pour que les liens soient "rangés" par défaut */
+        transform: translateX(-210px);
+      }
+      
+  
+  #hamburger-logo,nav {
+    /* Pour qu'il y ait une animation */
+    transition: 0.7s;
+  }
+  
+  /* Lorsque #hamburger est coché, le #hamburger-logo et le nav qui sont dans le même parent changent de propriété */
+  #hamburger:checked ~ #hamburger-logo,
+  #hamburger:checked ~ nav {
+    /* Changement de la position pour afficher les menus */
+    transform: translate(-8px);
+  }
+  .menu nav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  .menu nav a :hover{
+    background-color: blueviolet;
+  }
+
+
 .scroll{
     display: flex;
     justify-content: center;
@@ -45,16 +115,20 @@ nav a {
     margin-top: -10px;
 }
 
-#caroussel1{
-    width: 1200px;
+.caroussel1{
+    width: 90%;
     overflow:hidden;
 }
 .images{
     display: flex;
     margin-top: 70px;
+    height: auto;
     animation-duration: 10s;
     animation-name: myImages;
     animation-iteration-count: infinite;
+}
+.caroussel1 img{
+    width: 100%;
 }
 .images:hover{
     cursor: pointer;
@@ -66,37 +140,35 @@ nav a {
         transform: translateX(0px);
     }
     2% {
-        transform: translateX(-1200px);
+        transform: translateX(-100%);
     }
     25% {
-        transform: translateX(-1200px);
+        transform: translateX(-100%);
     }
     27% {
-        transform: translateX(-2400px);
+        transform: translateX(-200%);
     }
     50% {
-        transform: translateX(-2400px);
+        transform: translateX(-200%);
     }
     52% {
-        transform: translateX(-3600px);
+        transform: translateX(-300%);
     }
     75% {
-        transform: translateX(-3600px);
+        transform: translateX(-300%);
     }
     75.5% {
-        transform: translateX(0px) ;
+        transform: translateX(0%) ;
     }
-   
-   
 }
 
 
-    .band{
+.band{
         display: flex;
         justify-content: center;
         width: 170px;
         position: relative;
-        left: 600px;
+        left: 40%;
         height: auto;
         margin-top: 50px;
         overflow: hidden;
@@ -110,8 +182,9 @@ nav a {
         flex-wrap: nowrap;
         margin: 20px;
         text-align: center;
+        color: rgb(28, 24, 68);
         animation-name: passage;
-        animation-duration: 10s;
+        animation-duration: 15s;
         animation-iteration-count: infinite ;
         animation-timing-function: linear;
     }
@@ -122,7 +195,7 @@ nav a {
     50% {
         transform: translateX(-450px);
       }  
-    50.1% {
+    50.01% {
         transform: translateX(450px);
       } 
     100%{
@@ -144,23 +217,24 @@ h2{
     color: rgb(28, 24, 68);
 
 }
-.smallscroll{
+.section3{
     display: flex;
-    justify-content: space-between;
-    width: 1100px ;
-    margin-left: 110px;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    align-self: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px;
 }
 
 .scroll2{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 400px;
+    
 }
 
 .caroussel2{
-    width: 490px;
+    width: 100%;
     overflow:hidden;
 }
 .images2{
@@ -169,19 +243,28 @@ h2{
     animation-name: myImages2;
     animation-iteration-count: infinite;
 }
+.image-ag{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+.section3 img{
+    width: 400px;
+}
+
 
 @keyframes myImages2{
     0% {
         transform: translateX(0px);
     }
     25% {
-        transform: translateX(-490px);
+        transform: translateX(-100%);
     }
     50% {
-        transform: translateX(-980px);
+        transform: translateX(-200%);
     }
     75% {
-        transform: translateX(-1470px);
+        transform: translateX(-300%);
     }
     100% {
         transform: translateX(0px) ;
@@ -191,18 +274,18 @@ h2{
 .knowmore{
     display: flex;
     justify-content: space-between;
-    width: 90%;
-    margin: auto;
+    align-self: center;
+    margin: 50px;
     text-align: left;
 }
 .what{
     width: 35%;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-right: 10px;
 }
 .mobilization{
     width: 20%;
-    margin: 20px;
+    margin: 10px;
 }
 .knowmore h3{
     font-size: 1.5em;
@@ -223,28 +306,78 @@ h2{
     font-weight: 600;
     text-decoration: none;
 }
+.partners{
+    width: 100%;
+}
+.partners .separator{
+    border-top: dotted  rgba(236, 126, 62, 0.945) 5px;
+    margin: 50px 300px;
+}
 .partenaires{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 90%;
-    height: 600px;
-    margin: 50px;
+    margin: 20px;
+    margin-bottom: 50px;
     padding: 10px;
-
-   
+ 
+}
+.partenaires div{
+    display: flex;
+    align-self: center;
+    width: 100px;
+    margin: 30px;
 }
 
 .partenaires img{
-    width: 100px;
-    margin: 20px;
+    width: 100%;
 }
+.contact-us{
+    display: flex;
+    justify-content: space-evenly;
+    align-self: center;
+    background-color: gold;
+    margin: 5%;
+}
+.contact-us h2{
+    width: 400px;
+    font-weight: 700;
+}
+.contact-us h4{
+margin: 10px;
+font-size: 1.5em;
+color: rgb(28, 24, 68);;
+}
+.contact-us .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+.contact-us .button a{
+    display: inline;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(224, 34, 224, 0.801);
+    width: 180px;
+    border-radius: 10px;
+    padding: 15px;
+    font-weight: 600;
+
+}
+.contact-us i{
+    margin: 8px;
+}
+.contact-us .button a:hover{
+    background-color: red;
+    transform: scale(0.8);}
 footer{
     display: grid;
     background-color: rgba(236, 126, 62, 0.945);
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 260px 30px;
-    width: 95%;
+    align-self: center;
     height: 300px;
     margin-top: 50px;
     padding: 30px;
@@ -252,11 +385,16 @@ footer{
     color: white;
 
 }
-.footer1 button , .footer1 a{
+.footer4 button , .footer4 button a{
+    background-color:  rgba(236, 126, 62, 0.945);
+    font-size: 16px;
     border: none;
+    margin-bottom: 10px;
     text-decoration: none;
     font-weight: 700;
+    color: white;
 }
+
 footer h4{
     font-size: 1.3em;
 }
@@ -276,4 +414,88 @@ footer h4{
     text-align: center;
     align-self: center;
 }
+
+@media screen and (max-width: 800px ){
+    .navigation{
+        display: none;
+    }
+    .menu {
+        display : block;
+    }
+    
+    .logo {
+        width: 55px;
+    }
+    .searchicon{
+        width: 15px;
+        height: 15px;
+    }
+    .scroll{
+        margin: 10px;
+
+    }
+   
+   
+    h2{
+        text-align: center;
+        font-size: 1.4em;
+        font-weight: 300;
+    }
+    .section2{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+    }
+    .section3{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+    }
+    
+    .knowmore{
+        display: flex;
+        flex-direction: column;  
+        width: 90%;  }
+    .what, .mobilization{
+        margin-bottom:-10px;
+        width: 100%;
+}
+    
+    
+    .partenaires{
+        margin-left: 0px;
+        margin-right: 0px
+    }
+    .contact-us{
+        display: flex;
+        flex-wrap: wrap;
+        align-self: center;
+        align-items: center;
+        text-align: center;
+        margin: 0px;
+    }
+    
+    
+    footer{
+    display: flex;
+    flex-direction: column;    
+    height: fit-content;
+    align-items: center;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    }
+
+
+}
+
+    
+
+
+    
+
+
 
